@@ -1,25 +1,34 @@
-import { memo, useCallback } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import LOGO from '@/shared/assets/images/logo.png'
 import cls from './LoginFrom.module.scss';
 import { Input } from '@/shared/ui/Input/Input';
 import { Button } from '@/shared/ui/Button/Button';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { getLoginState } from '../../model/selectors/getLoginState';
+import { 
+    errorUser, getUserPassword, getUsername, loadingUser,
+} from '../../model/selectors/getLoginState';
 import { loginActions } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { Text, TextTheme } from '@/shared/ui/Text/Text';
+import { getUserAuthData } from '@/entities/User';
+import { useNavigate } from 'react-router-dom';
+import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 
 export const LoginFrom = memo(() => {
     const dispatch = useAppDispatch();
-    const {
-        username, password, isLoading, error,
-    } = useSelector(getLoginState);
+    const username = useSelector(getUsername);
+    const password = useSelector(getUserPassword);
+    const isLoading = useSelector(loadingUser);
+    const error = useSelector(errorUser);
+
+    const authCheck = useSelector(getUserAuthData);
+    const navigate = useNavigate();
 
     const onLoginClick = useCallback(() => {
         const authData = {
-            username: username, // Имя пользователя из вашего состояния
-            password: password // Пароль из вашего состояния
+            username: username,
+            password: password
         };
         dispatch(loginByUsername(authData));
     }, [dispatch, password, username]);
@@ -31,6 +40,12 @@ export const LoginFrom = memo(() => {
     const onChangePassword = useCallback((value: string) => {
         dispatch(loginActions.setPassword(value));
     }, [dispatch])
+
+    useEffect(() => {
+        if (authCheck) {
+            navigate(RoutePath.main);
+        }
+    }, [authCheck, navigate]);
 
     return (
         <div className={cls.LoginFrom}>

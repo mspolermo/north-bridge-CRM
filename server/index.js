@@ -45,7 +45,7 @@ app.post('/login', simulateDelay, (req, res) => {
 
       if (user) {
         // Пользователь авторизован
-        res.json({ authorized: true, user });
+        res.json(user);
       } else {
         // Неверное имя пользователя или пароль
         res.status(401).json({ authorized: false, error: 'Invalid username or password' });

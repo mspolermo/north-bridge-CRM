@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { StateSchema } from './StateSchema';
-import { usersReducer } from '@/features/fetchUser';
+import { usersReducer } from '@/features/fetchUsers';
 import { loginReducer } from '@/features/AuthByUsername';
 import { userReducer } from '@/entities/User';
 

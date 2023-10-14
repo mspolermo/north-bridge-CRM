@@ -1,6 +1,6 @@
 import { UserSchema } from "@/entities/User";
 import { LoginSchema } from "@/features/AuthByUsername";
-import { UsersSchema } from "@/features/fetchUser";
+import { UsersSchema } from "@/features/fetchUsers";
 
 export interface StateSchema {
     user: UserSchema;

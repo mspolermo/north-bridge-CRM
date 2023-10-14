@@ -12,8 +12,6 @@ export const Navbar = memo(() => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
-    console.log(authData);
-
     const onLogOut = useCallback(() => {
         dispatch(userActions.logout());
         navigate(RoutePath.login);

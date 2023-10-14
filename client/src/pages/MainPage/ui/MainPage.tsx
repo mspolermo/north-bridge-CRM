@@ -1,5 +1,5 @@
-import { getUsers } from '@/features/fetchUser';
-import { fetchUsers } from '@/features/fetchUser/model/services/fetchUsers';
+import { getUsers } from '@/features/fetchUsers';
+import { fetchUsers } from '@/features/fetchUsers/model/services/fetchUsers';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Page } from '@/widgets/Page';
 import { useEffect } from 'react';
