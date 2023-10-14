@@ -1,6 +1,8 @@
 @import './fonts.scss';
+@import './reset.scss';
 @import './variables/global.scss';
 
 :root {
-    background-color: var(--main-background);
+    background-color: var(--bg-color);
+    font: var(--font-m);
 }

@@ -1,12 +1,19 @@
 import './styles/index.scss'
-import { LoginPage } from '../pages/LoginPage/LoginPage'
+import { AppRouter } from './providers/router'
+import { Suspense } from 'react'
+import { Navbar } from '@/widgets/Navbar'
 
 function App() {
 
   return (
-    <div>
-      <LoginPage />
-    </div>
+    <div className='app'>
+    <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+            <AppRouter />
+        </div>
+    </Suspense>
+</div>
   )
 }
 

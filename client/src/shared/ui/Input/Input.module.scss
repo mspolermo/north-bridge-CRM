@@ -3,16 +3,15 @@
     padding: 20px;
     width: 100%;
     
-    border: 1px solid var(--border-primary);
-    border-radius: 20px;
+    border: 1px solid var(--inverted-primary-color);
+    border-radius: 10px;
     
-    color: var(--text-primary);
+    color: var(--primary-color);
     font: var(--font-s);
-    font-family: 'Comfortaa', Arial, sans-serif;
     &::placeholder {
         opacity: .5;
     }
     &:focus {
-        outline: 1px solid var(--border-secondary);
+        outline: 1px solid var(--inverted-secondary-color);
     }
 }

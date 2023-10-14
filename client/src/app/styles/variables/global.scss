@@ -21,26 +21,28 @@
     --font-weight-xl: 600;
     --font-xl:var(--font-weight-xl) var(--font-size-xl) / var(--font-line-xl)  var(--font-family-main) ;
 
-    --font-size-xxl: 48px;
-    --font-line-xxl: 62px;
-    --font-weight-xxl: 600;
-    --font-xxl: var(--font-weight-xxl) var(--font-size-xxl) / var(--font-line-xxl) var(--font-family-main);
-
     // Размеры
-
+    --navbar-height: 50px;
     // Z-индексы
 
     // Цвета
-    --main-background: #FFFEFB;
-    --add-background: #FFF5DF;
+    --bg-color: #FFFEFB;
+    --inverted-bg-color: #fdf0d39d;
+    --primary-color: #4c4253;
+    --secondary-color: #fffefb;
+    --inverted-primary-color: #ffd159;
+    --inverted-secondary-color: #ff7f17;
 
-    --text-primary: #4c4253;
-    --text-secondary: #fffefb;
-    --text-red: #fe683d;
+    --red-light: #f00;
+    --red-dark: #ce0505;
 
-    --btn-primary: #ffd159;
-    --btn-secondary: #ff7f17;
+    // skeleton
+    --skeleton-color: #fff;
+    --skeleton-shadow: rgba(0 0 0 / 20%);
 
-    --border-primary: #ffd159;
-    --border-secondary: #fe683d;
+    // code
+    --code-bg: #fff;
+
+    // card
+    --card-bg: #d5d5d7;
 }
