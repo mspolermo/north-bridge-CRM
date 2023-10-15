@@ -12,7 +12,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
     'login/fetchByIdStatus',
     async (authData, thunkAPI) => {
         try {
-            const response = await axios.post<User>(`http://localhost:4000/login/`, authData);
+            const response = await axios.post<User>(`http://localhost:4000/api/users/login`, authData);
             if (!response.data) {
                 throw new Error();
             }
@@ -20,7 +20,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             thunkAPI.dispatch(userActions.setAuthData(response.data));
 
-            console.log(response.data)
             return response.data;
         } catch (e) {
             console.log(e);

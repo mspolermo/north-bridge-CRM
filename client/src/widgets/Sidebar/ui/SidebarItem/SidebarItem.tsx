@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { getUserAuthData } from '@/entities/User';
 import { SidebarItemType } from '@/widgets/Sidebar/model/types/sidebar';
 import cls from './SidebarItem.module.scss';
-import { Icons } from '@/shared/lib/Icons/Index';
+import { Icons } from '@/shared/lib/Icons';
 import { IconsSize, IconsTheme } from '@/shared/lib/Icons/ui/Icons';
 
 interface SidebarItemProps {
