@@ -1,5 +1,6 @@
 import { memo, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import LOGO from '@/shared/assets/images/logo.png';
 import cls from './Navbar.module.scss';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useSelector } from 'react-redux';
@@ -17,15 +18,21 @@ export const Navbar = memo(() => {
         navigate(RoutePath.login);
     }, [dispatch, navigate]);
 
+    const onLogoClick = useCallback(() => {
+        navigate(RoutePath.main);
+    }, [navigate]);
+
     if (!authData) {
         return null
     }
 
     return (
         <div className={cls.Navbar}>
-            <Link to={RoutePath.login}>Войти</Link>
-            <Link to={RoutePath.main}>Главная</Link>
-            <Button onClick={onLogOut}>Выйти</Button>
+            <img className={cls.logo} src={LOGO} alt="Logo" onClick={onLogoClick} />
+            <div>
+                <Button onClick={onLogOut}>Выйти</Button>
+            </div>
+
         </div>
     );
 });

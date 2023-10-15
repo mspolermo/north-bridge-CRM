@@ -35,6 +35,13 @@
     color: var(--red-light);
 }
 
+.outline_secondary {
+    background: none;
+    border: 1px solid var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
+    border-radius: 6px;
+}
+
 .background {
     background: var(--bg-color);
     color: var(--primary-color);

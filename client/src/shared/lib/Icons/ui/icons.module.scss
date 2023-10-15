@@ -1,0 +1,36 @@
+.icons {
+    cursor: pointer;
+}
+
+.primary {
+    fill: var(--primary-color);
+    stroke: var(--primary-color);
+}
+
+.secondary {
+    fill: var(--secondary-color);
+    stroke: var(--secondary-color);
+}
+.primary_inverted {
+    fill: var(--inverted-primary-color);
+    stroke: var(--inverted-primary-color);
+}
+.secondary_inverted {
+    fill: var(--inverted-secondary-color);
+    stroke: var(--inverted-secondary-color);
+}
+
+.size_m {
+    width: 24px;
+    height: 24px;
+}
+
+.size_l {
+    width: 36px;
+    height: 36px;
+}
+
+.size_xl {
+    width: 42px;
+    height: 42px;
+}
