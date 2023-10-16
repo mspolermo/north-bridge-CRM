@@ -3,6 +3,7 @@ import { StateSchema } from './StateSchema';
 import { usersReducer } from '@/features/fetchUsers';
 import { loginReducer } from '@/features/AuthByUsername';
 import { userReducer } from '@/entities/User';
+import { changeUserReducer } from '@/features/changeUser';
 
 export function createReduxStore(initialState?: StateSchema) {
     return configureStore({
@@ -10,6 +11,7 @@ export function createReduxStore(initialState?: StateSchema) {
             user: userReducer,
             users: usersReducer,
             loginForm: loginReducer,
+            changeUser: changeUserReducer,
         },
         preloadedState: initialState,
     });

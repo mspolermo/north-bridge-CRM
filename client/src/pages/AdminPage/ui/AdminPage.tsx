@@ -7,6 +7,7 @@ import { fetchUsers } from '@/features/fetchUsers/model/services/fetchUsers';
 import { getUserAuthData } from '@/entities/User';
 import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ChangeUserForm } from '@/widgets/ChangeUserForm';
 
 const AdminPage = () => {
     const dispatch = useAppDispatch();
@@ -38,7 +39,8 @@ const AdminPage = () => {
                         <span>Role - {user.role}</span>
                     </p>
                 )
-               })} 
+               })}
+               <ChangeUserForm /> 
             </div>
             
         </Page>
